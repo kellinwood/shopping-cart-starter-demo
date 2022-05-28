@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: shopping-cart
+    ssl-enabled: false
+    ssl:
+      key-password:
+      key-store-location:
+      key-store-password: ${spring.kafka.ssl.key-password}
+      trust-store-location:
+      trust-store-password:
+      protocol: SSL
+    bootstrap-servers:
+      - localhost:9092
+
+kafka:
+  producer:
+    topics:
+      receipt: receipt-event
