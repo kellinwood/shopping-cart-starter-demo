@@ -1,16 +1,19 @@
 package com.csipon.demo.fn;
 
 import com.csipon.demo.fn.model.*;
+import com.spring.flinksf.MessageBuilder;
 import com.spring.flinksf.api.DispatchableFunction;
 import com.spring.flinksf.api.Handler;
+import com.spring.flinksf.api.StatefulFunction;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.flink.statefun.sdk.java.*;
+import org.apache.flink.statefun.sdk.java.Address;
+import org.apache.flink.statefun.sdk.java.AddressScopedStorage;
+import org.apache.flink.statefun.sdk.java.Context;
+import org.apache.flink.statefun.sdk.java.ValueSpec;
 import org.apache.flink.statefun.sdk.java.io.KafkaEgressMessage;
 import org.apache.flink.statefun.sdk.java.message.EgressMessage;
 import org.apache.flink.statefun.sdk.java.message.Message;
-import org.apache.flink.statefun.sdk.java.message.MessageBuilder;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -19,10 +22,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Slf4j
-@Component
+@StatefulFunction(namespace = "com.demo", name = "user-shopping-cart")
 public class UserShoppingCartFn implements DispatchableFunction {
 
-    public static final TypeName TYPE = TypeName.typeNameFromString("com.demo/user-shopping-cart");
     public static final ValueSpec<Basket> BASKET = ValueSpec.named("basket").withCustomType(Basket.TYPE);
 
     @Value("${kafka.producer.topics.receipt}")
@@ -36,7 +38,7 @@ public class UserShoppingCartFn implements DispatchableFunction {
 
         final RequestItem requestItem = new RequestItem(event.getQuantity());
         final Message request =
-                MessageBuilder.forAddress(StockFn.TYPE, event.getItemId())
+                MessageBuilder.forAddress(StockFn.class, event.getItemId())
                         .withCustomType(RequestItem.TYPE, requestItem)
                         .build();
         context.send(request);
@@ -122,7 +124,7 @@ public class UserShoppingCartFn implements DispatchableFunction {
                                 RestockItem restockItem =
                                         new RestockItem(entry.getKey(), entry.getValue());
                                 Message restockCommand =
-                                        MessageBuilder.forAddress(StockFn.TYPE, entry.getKey())
+                                        MessageBuilder.forAddress(StockFn.class, entry.getKey())
                                                 .withCustomType(RestockItem.TYPE, restockItem)
                                                 .build();
 

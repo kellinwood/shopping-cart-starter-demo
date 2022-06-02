@@ -3,21 +3,23 @@ package com.csipon.demo.fn;
 import com.csipon.demo.fn.model.ItemAvailability;
 import com.csipon.demo.fn.model.RequestItem;
 import com.csipon.demo.fn.model.RestockItem;
+import com.spring.flinksf.MessageBuilder;
 import com.spring.flinksf.api.DispatchableFunction;
 import com.spring.flinksf.api.Handler;
+import com.spring.flinksf.api.StatefulFunction;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.flink.statefun.sdk.java.*;
-import org.apache.flink.statefun.sdk.java.message.MessageBuilder;
-import org.springframework.stereotype.Component;
+import org.apache.flink.statefun.sdk.java.Address;
+import org.apache.flink.statefun.sdk.java.AddressScopedStorage;
+import org.apache.flink.statefun.sdk.java.Context;
+import org.apache.flink.statefun.sdk.java.ValueSpec;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
-@Component
+@StatefulFunction(namespace = "com.demo", name = "stock")
 public class StockFn implements DispatchableFunction {
 
-    public static final TypeName TYPE = TypeName.typeNameFromString("com.demo/stock");
     public static final ValueSpec<Integer> STOCK = ValueSpec.named("stock").withIntType();
 
     @Handler
