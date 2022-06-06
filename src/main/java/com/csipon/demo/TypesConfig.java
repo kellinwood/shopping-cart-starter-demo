@@ -1,9 +1,9 @@
 package com.csipon.demo;
 
 
-import com.spring.flink.statefun.api.EnableMessageTypeScan;
+import com.spring.flink.statefun.api.EnableDataTypeScan;
 
-@EnableMessageTypeScan(basePackageScan = {"com.csipon.demo"})
+@EnableDataTypeScan(basePackageScan = {"com.csipon.demo"})
 public class TypesConfig {
 
 }
