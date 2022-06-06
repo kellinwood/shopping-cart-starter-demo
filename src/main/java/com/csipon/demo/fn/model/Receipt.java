@@ -1,6 +1,6 @@
 package com.csipon.demo.fn.model;
 
-import com.spring.flinksf.api.MessageType;
+import com.spring.flink.statefun.api.DataType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import static com.csipon.demo.ObjectMapperUtil.MAPPER;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Receipt {
-    @MessageType
+    @DataType
     public static final Type<Receipt> TYPE = SimpleType.simpleImmutableTypeFrom(
             TypeName.typeNameFromString("com.demo/Receipt"),
             MAPPER::writeValueAsBytes,

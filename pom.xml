@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.csipon</groupId>
-            <artifactId>spring-boot-starter-flink-sf</artifactId>
+            <artifactId>spring-boot-starter-flink-statefun</artifactId>
             <version>0.1.0</version>
         </dependency>
         <dependency>

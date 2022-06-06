@@ -2,7 +2,7 @@ package com.csipon.demo.fn.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.spring.flinksf.api.MessageType;
+import com.spring.flink.statefun.api.DataType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +20,7 @@ import static com.csipon.demo.ObjectMapperUtil.MAPPER;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Basket {
-    @MessageType
+    @DataType
     public static final Type<Basket> TYPE = SimpleType.simpleImmutableTypeFrom(
             TypeName.typeNameFromString("com.demo/Basket"),
             MAPPER::writeValueAsBytes,

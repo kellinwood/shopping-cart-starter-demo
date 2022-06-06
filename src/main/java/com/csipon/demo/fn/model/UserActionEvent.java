@@ -1,6 +1,6 @@
 package com.csipon.demo.fn.model;
 
-import com.spring.flinksf.api.MessageType;
+import com.spring.flink.statefun.api.DataType;
 import lombok.Data;
 import org.apache.flink.statefun.sdk.java.TypeName;
 import org.apache.flink.statefun.sdk.java.types.SimpleType;
@@ -10,7 +10,7 @@ import static com.csipon.demo.ObjectMapperUtil.MAPPER;
 
 @Data
 public class UserActionEvent {
-    @MessageType
+    @DataType
     public static final Type<UserActionEvent> TYPE = SimpleType.simpleImmutableTypeFrom(
             TypeName.typeNameFromString("com.demo/UserActionEvent"),
             MAPPER::writeValueAsBytes,

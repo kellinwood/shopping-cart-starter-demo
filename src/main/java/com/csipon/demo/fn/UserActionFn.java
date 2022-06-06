@@ -2,9 +2,9 @@ package com.csipon.demo.fn;
 
 import com.csipon.demo.fn.model.UserActionEvent;
 import com.csipon.demo.fn.model.UserActionMapper;
-import com.spring.flinksf.api.DispatchableFunction;
-import com.spring.flinksf.api.Handler;
-import com.spring.flinksf.api.StatefulFunction;
+import com.spring.flink.statefun.api.DispatchableFunction;
+import com.spring.flink.statefun.api.Handler;
+import com.spring.flink.statefun.api.StatefulFunction;
 import lombok.RequiredArgsConstructor;
 import org.apache.flink.statefun.sdk.java.Context;
 import org.apache.flink.statefun.sdk.java.message.Message;

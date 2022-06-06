@@ -1,6 +1,6 @@
 package com.csipon.demo.fn.model;
 
-import com.spring.flinksf.api.MessageType;
+import com.spring.flink.statefun.api.DataType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.flink.statefun.sdk.java.TypeName;
@@ -12,7 +12,7 @@ import static com.csipon.demo.ObjectMapperUtil.MAPPER;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClearCard {
-    @MessageType
+    @DataType
     public static final Type<ClearCard> TYPE = SimpleType.simpleImmutableTypeFrom(
             TypeName.typeNameFromString("com.demo/ClearCard"),
             MAPPER::writeValueAsBytes,

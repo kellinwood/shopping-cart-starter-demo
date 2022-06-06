@@ -1,10 +1,10 @@
 package com.csipon.demo.fn;
 
 import com.csipon.demo.fn.model.*;
-import com.spring.flinksf.MessageBuilder;
-import com.spring.flinksf.api.DispatchableFunction;
-import com.spring.flinksf.api.Handler;
-import com.spring.flinksf.api.StatefulFunction;
+import com.spring.flink.statefun.MessageBuilder;
+import com.spring.flink.statefun.api.DispatchableFunction;
+import com.spring.flink.statefun.api.Handler;
+import com.spring.flink.statefun.api.StatefulFunction;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.statefun.sdk.java.Address;
 import org.apache.flink.statefun.sdk.java.AddressScopedStorage;
@@ -13,6 +13,7 @@ import org.apache.flink.statefun.sdk.java.ValueSpec;
 import org.apache.flink.statefun.sdk.java.io.KafkaEgressMessage;
 import org.apache.flink.statefun.sdk.java.message.EgressMessage;
 import org.apache.flink.statefun.sdk.java.message.Message;
+
 import org.springframework.beans.factory.annotation.Value;
 
 import java.nio.charset.StandardCharsets;
