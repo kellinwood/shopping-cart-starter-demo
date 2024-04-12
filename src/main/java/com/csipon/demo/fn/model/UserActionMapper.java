@@ -1,7 +1,7 @@
 package com.csipon.demo.fn.model;
 
 import com.csipon.demo.fn.UserShoppingCartFn;
-import com.spring.flink.statefun.MessageBuilder;
+import com.insyde.flink.statefun.MessageBuilder;
 import org.apache.flink.statefun.sdk.java.message.Message;
 import org.springframework.stereotype.Component;
 

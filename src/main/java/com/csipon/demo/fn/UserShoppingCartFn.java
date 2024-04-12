@@ -1,10 +1,10 @@
 package com.csipon.demo.fn;
 
 import com.csipon.demo.fn.model.*;
-import com.spring.flink.statefun.MessageBuilder;
-import com.spring.flink.statefun.api.DispatchableFunction;
-import com.spring.flink.statefun.api.Handler;
-import com.spring.flink.statefun.api.StatefulFunction;
+import com.insyde.flink.statefun.MessageBuilder;
+import com.insyde.flink.statefun.api.DispatchableFunction;
+import com.insyde.flink.statefun.api.Handler;
+import com.insyde.flink.statefun.api.StatefulFunction;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.statefun.sdk.java.Address;
 import org.apache.flink.statefun.sdk.java.AddressScopedStorage;

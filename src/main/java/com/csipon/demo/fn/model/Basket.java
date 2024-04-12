@@ -2,7 +2,7 @@ package com.csipon.demo.fn.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.spring.flink.statefun.api.DataType;
+import com.insyde.flink.statefun.api.DataType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

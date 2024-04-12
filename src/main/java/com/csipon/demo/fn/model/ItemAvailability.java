@@ -1,6 +1,6 @@
 package com.csipon.demo.fn.model;
 
-import com.spring.flink.statefun.api.DataType;
+import com.insyde.flink.statefun.api.DataType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

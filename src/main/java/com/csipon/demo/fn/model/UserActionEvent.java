@@ -1,6 +1,6 @@
 package com.csipon.demo.fn.model;
 
-import com.spring.flink.statefun.api.DataType;
+import com.insyde.flink.statefun.api.DataType;
 import lombok.Data;
 import org.apache.flink.statefun.sdk.java.TypeName;
 import org.apache.flink.statefun.sdk.java.types.SimpleType;
